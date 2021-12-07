@@ -4,6 +4,10 @@ jobs:
   run_rspec:
     runs-on: ubuntu-latest
     steps:
+      env:
+        RAILS_ENV: test
+      - name: Install dependent libralies
+        run: sudo apt-get install libmysqlclient-dev
       - uses: actions/checkout@v2
       - name: Set up Ruby
         uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
