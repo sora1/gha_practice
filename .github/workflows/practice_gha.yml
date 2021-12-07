@@ -1,14 +1,14 @@
 name: practice_gha
-  on: [push, pull_request]
-  jobs:
-    run-rspec:
-      runs-on: ubuntu-lates
-      steps:
-        - uses: actions/checkout@v2
-        - name: Set up Ruby
-          uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
-          with:
-            ruby-version: 2.5.1
+on: [ push, pull_request ]
+jobs:
+  run-rspec:
+    runs-on: ubuntu-lates
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
+        with:
+          ruby-version: 2.5.1
 	- name: bundle install
 	  run: bundle install
         - name: create db
