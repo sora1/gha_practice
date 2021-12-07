@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install dependent libralies
-        run: sudo apt-get install libmysqlclient-dev
+        run: sudo apt-get install libmysqlclient-dev | mysql.server start
       - uses: actions/checkout@v2
       - name: Set up Ruby
         uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
