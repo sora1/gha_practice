@@ -4,8 +4,6 @@ jobs:
   run_rspec:
     runs-on: ubuntu-latest
     steps:
-      env:
-        RAILS_ENV: test
       - name: Install dependent libralies
         run: sudo apt-get install libmysqlclient-dev
       - uses: actions/checkout@v2
