@@ -10,7 +10,7 @@ jobs:
       - name: Install dependencies
         run: bundle install
       - name: setup database
-       run: |
+        run: |
           sudo systemctl start mysql
           bundle exec rake db:create
         env:
