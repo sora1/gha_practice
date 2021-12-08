@@ -1,0 +1,20 @@
+name: practice_gha
+on: [ push, pull_request ]
+jobs:
+  run_rspec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
+      - name: Install dependencies
+        run: bundle install
+      - name: setup databaseroot
+        run: |
+          sudo systemctl start mysql
+          bundle exec rake db:create
+        env:
+          RAILS_ENV: test
+      - name: Run tests
+        run: bundle exec rspec
+
