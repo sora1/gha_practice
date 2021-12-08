@@ -9,7 +9,7 @@ jobs:
         uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
       - name: Install dependencies
         run: bundle install
-      - name: setup database
+      - name: setup databaseroot
         run: |
           sudo systemctl start mysql
           bundle exec rake db:create
